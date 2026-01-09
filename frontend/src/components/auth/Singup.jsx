@@ -44,12 +44,16 @@ const Singup = () => {
     } 
     try {
       dispatch(setLoading(true));
-      const res = await axios.post("https://jobportal-youtube.onrender.com/api/v1/user/register", formData, {
-        headers: {
-          "Content-Type": "multipart/form-data"
-        },
-        withCredentials: true
-      });
+      const res = await axios.post(
+        "https://jobportal-live-project.onrender.com/api/v1/user/register",
+        formData,
+        {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+          withCredentials: true,
+        }
+      );
       if (res.data.success) {
         navigate("/login");
         toast.success(res.data.message);

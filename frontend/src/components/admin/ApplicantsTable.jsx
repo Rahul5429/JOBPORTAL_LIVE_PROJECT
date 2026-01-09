@@ -23,9 +23,13 @@ const ApplicantsTable = () => {
 
     const statusHandler = async (status, id) => {
         try {
-            const res = await axios.post(`https://jobportal-youtube.onrender.com/api/v1/application/status/${id}/update`, {status}, {
-                withCredentials: true
-            });
+            const res = await axios.post(
+              `https://jobportal-live-project.onrender.com/api/v1/application/status/${id}/update`,
+              { status },
+              {
+                withCredentials: true,
+              }
+            );
             if(res.data.success){ 
                 toast.success(res.data.message);
             }

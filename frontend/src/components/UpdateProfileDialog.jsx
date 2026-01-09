@@ -50,12 +50,16 @@ export function UpdateProfileDialog({ open, setOpen }) {
 
         try {
             dispatch(setLoading(true));
-            const res = await axios.post("https://jobportal-youtube.onrender.com/api/v1/user/profile/update", formData, {
+            const res = await axios.post(
+              "https://jobportal-live-project.onrender.com/api/v1/user/profile/update",
+              formData,
+              {
                 headers: {
-                    'Content-Type': 'multipart/form-data'
+                  "Content-Type": "multipart/form-data",
                 },
-                withCredentials: true
-            });
+                withCredentials: true,
+              }
+            );
             if (res.data.success) {
                 dispatch(setAuthUser(res.data.user));
                 toast.success(res.data.message);

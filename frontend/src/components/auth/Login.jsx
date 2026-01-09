@@ -28,12 +28,16 @@ const Login = () => {
         
         try {
             dispatch(setLoading(true));
-            const res = await axios.post("https://jobportal-youtube.onrender.com/api/v1/user/login", input, {
+            const res = await axios.post(
+              "https://jobportal-live-project.onrender.com/api/v1/user/login",
+              input,
+              {
                 headers: {
-                    'Content-Type': 'application/json'
+                  "Content-Type": "application/json",
                 },
-                withCredentials: true
-            });
+                withCredentials: true,
+              }
+            );
             if (res.data.success) {
                 dispatch(setAuthUser(res.data.user));
                 navigate("/");

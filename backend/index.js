@@ -24,8 +24,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(urlencoded({ extended: true }));
 app.use(cookieParser());
 const corsOptions = {
-  origin: true,
-  credentials: true
+  origin: "https://jobportal-live-project.onrender.com",
+  credentials: true,
 };
 app.use(cors(corsOptions));
 

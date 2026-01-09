@@ -18,12 +18,16 @@ const CompanyCreate = () => {
 
     const createNewCompany = async () => {
         try {
-            const res = await axios.post("http://localhost:8000/api/v1/company/register", { companyName }, {
+            const res = await axios.post(
+              "https://jobportal-live-project.onrender.com/api/v1/company/register",
+              { companyName },
+              {
                 headers: {
-                    'Content-Type': 'application/json'
+                  "Content-Type": "application/json",
                 },
-                withCredentials: true
-            });
+                withCredentials: true,
+              }
+            );
             if (res?.data?.success) {
                 dispatch(setSingleCompany(res.data.company));
                 toast.success(res.data.message);
